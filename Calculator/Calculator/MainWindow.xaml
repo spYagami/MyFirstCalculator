@@ -14,7 +14,7 @@
     <Grid Margin="1.5">
         <Grid.RowDefinitions>
             <!--  These are for output numbers  -->
-            <RowDefinition Height="130" />
+            <RowDefinition Height="2*" />
             <!--  These are for input numbers  -->
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
