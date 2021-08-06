@@ -18,6 +18,16 @@ namespace Calculator
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+    public enum Operations
+    {
+        Division,
+        Multiplication,
+        Minus,
+        Plus
+
+    }
     public partial class MainWindow : Window
     {
         float temp = 0;
@@ -107,7 +117,7 @@ namespace Calculator
 
                 output = string.Empty;
 
-                operation = "Division";
+                operation = Operations.Division.ToString();
             }
         }
 
@@ -119,7 +129,7 @@ namespace Calculator
 
                 output = string.Empty;
 
-                operation = "Multiplication";
+                operation = Operations.Multiplication.ToString();
             }
         }
 
@@ -131,7 +141,7 @@ namespace Calculator
 
                 output = string.Empty;
 
-                operation = "Minus";
+                operation = Operations.Minus.ToString();
             }
         }
 
@@ -143,36 +153,38 @@ namespace Calculator
 
                 output = string.Empty;
 
-                operation = "Plus";
+                
+                operation = Operations.Plus.ToString();
             }
         }
 
         private void EqualsBtn_Click(object sender, RoutedEventArgs e)
         {
-            switch(operation)
+            Enum.TryParse(operation, out Operations myStatus);
+            switch (myStatus)
             {
-                case "Minus":
+                case Operations.Minus:
                     float outputTemp = temp - float.Parse(output);
                     output = outputTemp.ToString();
                     OutputTextBlock.Text = output;
                     temp = 0;
                     cleared = true;
                     break;
-                case "Division":
+                case Operations.Division:
                     float outputTemp2 = temp / float.Parse(output);
                     output = outputTemp2.ToString();
                     OutputTextBlock.Text = output;
                     temp = 0;
                     cleared = true;
                     break;
-                case "Plus":
+                case Operations.Plus:
                     float outputTemp3 = temp + float.Parse(output);
                     output = outputTemp3.ToString();
                     OutputTextBlock.Text = output;
                     temp = 0;
                     cleared = true;
                     break;
-                case "Multiplication":
+                case Operations.Multiplication:
                     float outputTemp4 = temp * float.Parse(output);
                     output = outputTemp4.ToString();
                     OutputTextBlock.Text = output;
