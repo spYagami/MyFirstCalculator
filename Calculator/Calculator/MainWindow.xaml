@@ -31,6 +31,16 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock
+            x:Name="CalculationsTextBlock"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="10"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Foreground="White"
+            TextAlignment="Right" />
+        <TextBlock
             x:Name="OutputTextBlock"
             Grid.Row="0"
             Grid.Column="0"
@@ -41,6 +51,7 @@
             Foreground="White"
             Text="{}"
             TextAlignment="Right" />
+
 
         <!--  NameOfTheButton (x:Button) // what the button says (Content)  -->
         <!--  Grid.Row (RowPosition)     // Grid.Colum (ColumnPosition)  -->

@@ -30,6 +30,8 @@ namespace Calculator
     }
     public partial class MainWindow : Window
     {
+        string calculations;
+
         float temp = 0;
 
         bool cleared=false;
@@ -53,6 +55,9 @@ namespace Calculator
             if (cleared)
             {
                 output = string.Empty;
+
+                calculations = output;
+
                 cleared = false;
             }
 
@@ -106,7 +111,12 @@ namespace Calculator
         {
             output = string.Empty;
             temp = 0;
+
             OutputTextBlock.Text = output;
+
+            calculations = string.Empty;
+
+            CalculationsTextBlock.Text = calculations;
         }
 
         private void DivisionBtn_Click(object sender, RoutedEventArgs e)
@@ -114,6 +124,10 @@ namespace Calculator
             if (output != "")
             {
                 temp = float.Parse(output);
+
+                calculations = output;
+
+                CalculationsTextBlock.Text = calculations + " " + DivisionBtn.Content + " ";
 
                 output = string.Empty;
 
@@ -127,6 +141,10 @@ namespace Calculator
             {
                 temp = float.Parse(output);
 
+                calculations = output;
+
+                CalculationsTextBlock.Text = calculations + " " + MultiplicationBtn.Content + " ";
+
                 output = string.Empty;
 
                 operation = Operations.Multiplication.ToString();
@@ -138,6 +156,10 @@ namespace Calculator
             if(output != "")
             {
                 temp = float.Parse(output);
+
+                calculations = output;
+
+                CalculationsTextBlock.Text = calculations + " " + MinusBtn.Content + " ";
 
                 output = string.Empty;
 
@@ -151,6 +173,10 @@ namespace Calculator
             {
                 temp = float.Parse(output);
 
+                calculations = output;
+
+                CalculationsTextBlock.Text = calculations + " " + PlusBtn.Content + " ";
+
                 output = string.Empty;
 
                 
@@ -161,6 +187,10 @@ namespace Calculator
         private void EqualsBtn_Click(object sender, RoutedEventArgs e)
         {
             Enum.TryParse(operation, out Operations myStatus);
+
+
+            CalculationsTextBlock.Text += output.ToString();
+
             switch (myStatus)
             {
                 case Operations.Minus:
@@ -212,6 +242,11 @@ namespace Calculator
             if (cleared)
             {
                 output = string.Empty;
+
+                calculations = output;
+
+                CalculationsTextBlock.Text = calculations;
+
                 cleared = false;
             }
 
