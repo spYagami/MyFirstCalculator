@@ -8,10 +8,31 @@
     Title="Sergio's Calculator"
     Width="340"
     Height="530"
+    AllowsTransparency="True"
     Background="#FF464646"
     Opacity="0.90"
+    WindowStyle="None"
     mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="20" />
+    </WindowChrome.WindowChrome>
+
     <Grid Margin="1.5">
+
+
+        <!--<Grid VerticalAlignment="Top">
+            <StackPanel Height =" 20"
+                        WindowChrome.IsHitTestVisibleInChrome="True"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <Button Width="20"/>
+                <Button Width="20"/>
+                <Button Width="20"/>
+
+            </StackPanel>
+        </Grid>-->
+
         <Grid.RowDefinitions>
             <!--  These are for output numbers  -->
             <RowDefinition Height="2*" />
@@ -51,6 +72,41 @@
             Foreground="White"
             Text="{}"
             TextAlignment="Right" />
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Height=" 35"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Orientation="Horizontal"
+            WindowChrome.IsHitTestVisibleInChrome="True">
+            <Button
+                x:Name="MinimizeBtn"
+                Width="35"
+                Background="#FF464646"
+                BorderBrush="{x:Null}"
+                Content="-"
+                FontSize="20"
+                Foreground="White" />
+            <Button
+                x:Name="MaximizeBtn"
+                Width="35"
+                Background="#FF464646"
+                BorderBrush="{x:Null}"
+                Content="+"
+                FontSize="20"
+                Foreground="White" />
+            <Button
+                x:Name="CloseBtn"
+                Width="35"
+                Background="#FF464646"
+                BorderBrush="{x:Null}"
+                Content="x"
+                FontSize="20"
+                Foreground="White" />
+        </StackPanel>
 
 
         <!--  NameOfTheButton (x:Button) // what the button says (Content)  -->
