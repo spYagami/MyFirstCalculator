@@ -6,4 +6,8 @@ I even made my 1st functional calculator app!
 
 #### Calculator
 
-![Calculator](https://i.imgur.com/V5UFyIS.png)
+![img](https://i.imgur.com/RKgpbvO.png)
+
+
+
+![img](https://i.imgur.com/iEI14Ww.png)
