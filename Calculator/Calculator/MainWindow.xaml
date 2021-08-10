@@ -9,7 +9,7 @@
     Width="340"
     Height="530"
     AllowsTransparency="True"
-    Background="#FF464646"
+    Background="#FF2C2C2C"
     Opacity="0.90"
     WindowStyle="None"
     mc:Ignorable="d">
